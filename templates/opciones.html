@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="{{url_for('static', filename='css/estilos.css')}}", rel="stylesheet">
+	<title>Opciones</title>
+</head>
+<body>
+<div id="mapaopciones">
+	<h1><strong>Instrucciones de Uso</strong></h1>
+	<br>
+	<p>Hay 3 tipos de laberintos con diferente dificultad. Debe elegir alguno con los nombres específicos</p>
+	<div class="imagengeneral">
+		<div class="divimagen">
+			<img class="imagen" src="{{url_for('static', filename='img/tinyMaze.jpg')}}" width="200" height="200">
+			<label>Mapa Pequeño</label>
+		</div>
+		<div class="divimagen">
+			<img class="imagen" src="{{url_for('static', filename='img/mediumMaze.jpg')}}" width="200" height="200">
+			<label>Mapa Mediano</label>
+		</div>
+		<div class="divimagen">
+			<img class="imagen" src="{{url_for('static', filename='img/bigMaze.jpg')}}" width="200" height="200">
+			<label>Mapa Grande</label>
+		</div>
+	</div>
+	<br><br>
+	<p>Existen 5 tipos de búsqueda: <strong>A* , Búsqueda en Profundidad, Búsqueda en Amplitud, Costo Uniforme y Primero el mejor.</strong><br>Para los comandos de voz debe llamarlos de la siguiente forma:</p>
+	<p>Debe elegir alguna de estás 5 opciones</p>
+	<ul>
+		<li>A* = Estrella</li>
+		<li>Búsqueda en Profundidad = Profundidad</li>
+		<li>Búsqueda en Amplitud = Amplitud</li>
+		<li>Costo Uniforme = Costo</li>
+		<li>Primero el mejor = Primero</li>
+	</ul>
+	<p>Las posiciones X y Y del Pacman siempre deben estar entre el rango máximo que se indica.</p>
+	<p>Para activar los comandos con voz debe oprimir el botón "Escuchar" y oprimirlo de nuevo para procesar la orden.<br> Tenga en cuenta que debe hacer este proceso por cada opción que quiera modificar (Mapa, Algoritmo, X del Pacman, Y del Pacman)<br></p>
+	<p>Para pasar de opción con el comando de voz puede decir "Tabular", teniendo en cuenta la observación anterior</p>
+	<p>Finalmente para generar la búsqueda puede dar click en el botón "Generar Búsqueda" o con el comando de voz decir "Generar Búsqueda"</p>
+	<p><strong>Mucha Suerte</strong></p>
+</div>
+<p><i>Universidad de Caldas  -  Ingeniería en Sistemas y Computación  -   2015</i></p>
+</body>
+</html>

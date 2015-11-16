@@ -1,0 +1,6 @@
+[SearchAgent] using function depthFirstSearch
+[SearchAgent] using problem type PositionSearchProblem
+Path found with total cost of 10 in 0.0 seconds
+Search nodes expanded: 16
+Pacman emerges victorious! Score: 500
+['West', 'West', 'West', 'West', 'South', 'South', 'East', 'South', 'South', 'West']

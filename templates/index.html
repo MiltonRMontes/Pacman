@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>PACMAN</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js"></script>
+	<link href="{{url_for('static', filename='css/estilos.css')}}", rel="stylesheet">
+	<script type="text/javascript" src="{{url_for('static', filename='js/actions.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename='js/comandosvoz.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static', filename='js/mostraropciones.js')}}"></script>
+</head>
+<body onload="primer_target">
+<div id="titulo">
+	<h1>PACMAN</h1>
+</div>
+	<div id="informacion">
+		<p>
+		<a href="javascript:MostrarOpciones()"><input type="button" value="Click para ver las Instrucciones"></input></a>
+		<h2><strong>Datos requeridos</strong></h2>
+		<div>
+			<label>Mapas:</label>
+			<select id= "mapa" tabindex="-1">
+				<option value="tinyMaze">Mapa Pequeño</option>
+				<option value="mediumMaze">Mapa Mediano</option>
+				<option value="bigMaze">Mapa Grande</option>
+			</select>
+		</div>
+		<br>
+		<div>
+			<label>Algoritmos:</label>
+			<select id="algoritmo" name="Algoritmo" placeholder = "Algoritmo" tabindex="-1">
+				<option value="astar">A Star Search</option>
+    		<option value="dfs">Depth First Search</option>
+    		<option value="bfs">Breadh First Search</option>
+    		<option value="ucs">Uniform Cost Search</option>
+    		<option value="pem">Best-First Search</option>
+    	</select>
+		</div>
+		<br>
+		<div>
+			<label><strong>Posición del Pacman:</strong></label>
+			<p>
+				X
+				<input id="x_pacman" name="x_pacman" onfocus="info()" tabindex="1" placeholder = "X de Pacman" type="number" min="1" max="7" width="30"> Máximo: <label id="maxxpac">7</label><br></br>
+				Y
+				<input id="y_pacman" name="y_pacman" onfocus="info()" tabindex="2" placeholder = "Y de Pacman" type="number" min="1" max="7"> Máximo: <label id="maxypac">7</label>
+			</p>
+		</div>
+		<div>
+			<label class="centrada"><strong>Posición de la Galleta:</strong></label>
+			<p>
+				X
+				<input id="x_galleta" name="x_galleta" onfocus="info()" tabindex="3" placeholder = "X de la Galleta" type="number" min="1" max="7" disabled> Máximo: <label id="maxxgall" disabled>7</label><br><br>
+				Y
+				<input id="y_galleta" name="y_galleta" onfocus="info()" tabindex="4" placeholder = "Y de la Galleta" type="number" min="1" max="7" disabled> Máximo: <label id="maxygall">7</label>
+			</p>
+		</div>
+			<br>
+		<div>
+			<input onclick="procesar()" id="procesar" tabindex="-1" type="submit" value="Escuchar" tabindex="-1">
+			<input id="Enviar" class="button" type="button" value="Generar Búsqueda" onclick="SendAjaxRequest()" tabindex="-1">
+		</div>
+		</p>
+	</div>
+	<div id="resultado">
+	<h3><strong>Resultado de la búsqueda</strong></h3>
+		Costo del recorrido: <label id="costo">0</label>
+		<br><br><br>
+		Cantidad de nodos expandidos: <label id="nodos">0</label>
+		<br><br><br>
+		<label id="llegada">No ha llegado al objetivo</label>
+	</div>
+
+	<canvas id="formas" width="500" height="500">
+
+	</canvas>
+	<div>
+		<p id="pie"><i>Universidad de Caldas  -  Ingeniería en Sistemas y Computación  -   2015</i></p>
+	</div>
+</body>
+</html>
